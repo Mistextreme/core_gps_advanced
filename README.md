@@ -77,12 +77,12 @@ CREATE TABLE IF NOT EXISTS `core_gps_advanced_devices` (
 
 ### 2. Add the Resource
 
-1. Copy the `Core_Gps_Advanced` folder to your server's `resources` directory
+1. Copy the `core_gps_advanced` folder to your server's `resources` directory
 2. Ensure `oxmysql` is installed and running
 3. Add to your `server.cfg`:
 ```cfg
 ensure oxmysql
-ensure Core_Gps_Advanced
+ensure core_gps_advanced
 ```
 
 ### 3. Add the Item
@@ -115,8 +115,8 @@ Config = {}
 
 -- Version Information (Update Config.GithubRepo with your repository)
 Config.Version = '1.0.0'
-Config.ResourceName = 'Core_Gps_Advanced'
-Config.GithubRepo = 'ChrisNewmanDev/Core_Gps_Advanced'
+Config.ResourceName = 'core_gps_advanced'
+Config.GithubRepo = 'ChrisNewmanDev/core_gps_advanced'
 
 Config.ItemName = 'core_gps_a'  -- Item name (must match items.lua)
 Config.MaxMarkers = 50        -- Maximum markers per GPS device
@@ -147,7 +147,7 @@ The script includes an automatic version checker that runs when the server start
 
 **Console Output Example:**
 ```
-[Core_Gps_Advanced] UPDATE AVAILABLE!
+[core_gps_advanced] UPDATE AVAILABLE!
 Current Version: 1.0.0
 Latest Version: 1.1.0
 
@@ -163,12 +163,15 @@ Changes:
   ➤ server/sv_gps.lua
   ➤ config.lua
 
-Download: https://github.com/ChrisNewmanDev/Core_Gps_Advanced
+Download: https://github.com/ChrisNewmanDev/core_gps_advanced
 ```
 
 **Enjoy your advanced GPS system!** 📍🗺️
 
----
+## Credits
+
+- **Framework**: QB-Core
+- **Developer**: ChrisNewmanDev
 
 ## 📝 Changelog
 
@@ -187,12 +190,3 @@ Download: https://github.com/ChrisNewmanDev/Core_Gps_Advanced
 - 🎒 Item-based GPS display system
 - 🎨 Modern radio-style UI
 - ⌨️ Keyboard shortcuts support
-
-#### Database
-- Created `core_gps_advanced` table for location storage
-- Created `core_gps_advanced_devices` table for device management
-
-#### Configuration
-- Customizable marker settings
-- Customizable blip settings
-- Configurable maximum markers per device

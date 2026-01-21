@@ -1,8 +1,8 @@
 Config = {}
 
 Config.Version = '1.0.0'
-Config.ResourceName = 'Core_Gps_Advanced'
-Config.GithubRepo = 'ChrisNewmanDev/Core_Gps_Advanced'
+Config.ResourceName = 'core_gps_advanced'
+Config.GithubRepo = 'ChrisNewmanDev/core_gps_advanced'
 
 Config.ItemName = 'core_gps_a'
 

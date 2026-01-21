@@ -2,7 +2,7 @@ fx_version 'cerulean'
 game 'gta5'
 
 description 'core_gps - Location Marker Management System'
-author 'Core Scripts'
+author 'ChrisNewmanDev'
 version '1.0.0'
 
 shared_scripts {

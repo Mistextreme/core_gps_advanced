@@ -405,7 +405,7 @@ function closeReceiveModal() {
     });
 }
 
-const resourceName = (typeof GetParentResourceName === 'function' && GetParentResourceName()) || 'Core_Gps_Advanced';
+const resourceName = (typeof GetParentResourceName === 'function' && GetParentResourceName()) || 'core_gps_advanced';
 
 function escapeHtml(text) {
     const div = document.createElement('div');
