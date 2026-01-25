@@ -1,9 +1,5 @@
 Config = {}
 
-Config.Version = '1.0.0'
-Config.ResourceName = 'core_gps_advanced'
-Config.GithubRepo = 'ChrisNewmanDev/core_gps_advanced'
-
 Config.ItemName = 'core_gps_a'
 
 Config.MarkerSettings = {
@@ -23,5 +19,4 @@ Config.BlipSettings = {
     display = 4,
     shortRange = false
 }
-
 Config.MaxMarkers = 50

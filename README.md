@@ -6,6 +6,14 @@ https://buymeacoffee.com/core_scripts
 
 An advanced FiveM GPS Marker script for QB-Core framework featuring **device-based storage** where each GPS device has its own unique ID and saved locations.
 
+## Some Screenshots
+
+https://i.postimg.cc/f3LH88F0/GPSA1.png
+
+https://i.postimg.cc/wtvWwwPD/GPSA2.png
+
+https://i.postimg.cc/0zZWGTt2/GPSA3.png
+
 ## 🌟 Key Features
 
 ### Device-Based System
@@ -53,7 +61,7 @@ An advanced FiveM GPS Marker script for QB-Core framework featuring **device-bas
 
 ### 1. Database Setup
 
-Run the SQL file located in `install/core_gps.sql`:
+Run the SQL file located in `install/core_gps_advanced.sql`:
 
 ```sql
 CREATE TABLE IF NOT EXISTS `core_gps_advanced` (
@@ -92,11 +100,11 @@ Add this item to your `qb-core/shared/items.lua`:
 ```lua
 core_gps_a = {
     name = 'core_gps_a',
-    label = 'GPS',
+    label = 'GPS Advanced',
     weight = 200,
     type = 'item',
-    image = 'core_gps.png',
-    unique = true,           -- MUST BE TRUE for metadata support
+    image = 'core_gps_advanced.png',
+    unique = true,
     useable = true,
     shouldClose = true,
     combinable = nil,
@@ -106,30 +114,6 @@ core_gps_a = {
 
 **Important:** The item MUST be set as `unique = true` to support metadata (GPS ID storage).
 
-### 4. Configure Settings
-
-Edit `config.lua` to customize:
-
-```lua
-Config = {}
-
--- Version Information (Update Config.GithubRepo with your repository)
-Config.Version = '1.0.0'
-Config.ResourceName = 'core_gps_advanced'
-Config.GithubRepo = 'ChrisNewmanDev/core_gps_advanced'
-
-Config.ItemName = 'core_gps_a'  -- Item name (must match items.lua)
-Config.MaxMarkers = 50        -- Maximum markers per GPS device
-
--- Blip settings
-Config.BlipSettings = {
-    sprite = 1,               -- Blip icon
-    color = 3,                -- Blip color
-    scale = 0.8,              -- Blip size
-    display = 4,              -- Display type
-    shortRange = true         -- Only show when nearby
-}
-```
 
 ## 🔄 Automatic Update Checker
 
@@ -140,53 +124,9 @@ The script includes an automatic version checker that runs when the server start
 - List specific files that need to be updated
 - Provide a download link to the latest release
 
-**Setup:**
-1. Update `Config.GithubRepo` in `config.lua` with your GitHub repository (format: `username/repo`)
-2. Ensure `version.json` is uploaded to your GitHub repository
-3. The checker will automatically run 2 seconds after server start
-
-**Console Output Example:**
-```
-[core_gps_advanced] UPDATE AVAILABLE!
-Current Version: 1.0.0
-Latest Version: 1.1.0
-
-📋 Changelog for v1.1.0:
-Release Date: 2026-01-22
-
-Changes:
-  ✓ Added new feature X
-  ✓ Fixed bug Y
-  ✓ Improved performance
-
-⚠ Files that need to be updated:
-  ➤ server/sv_gps.lua
-  ➤ config.lua
-
-Download: https://github.com/ChrisNewmanDev/core_gps_advanced
-```
-
 **Enjoy your advanced GPS system!** 📍🗺️
 
 ## Credits
 
 - **Framework**: QB-Core
 - **Developer**: ChrisNewmanDev
-
-## 📝 Changelog
-
-### Version 1.0.0 - Initial Release (January 21, 2026)
-
-#### Features
-- ✨ Device-based GPS system with unique IDs
-- 📍 Mark and save locations with custom labels
-- 🗺️ Visual map markers and blips
-- 🔄 Toggle markers on/off
-- 🚩 Set waypoints to saved locations
-- 🗑️ Delete markers with confirmation
-- 💾 Persistent storage with oxmysql
-- 📤 Share locations between players
-- ✅ Accept/decline shared locations
-- 🎒 Item-based GPS display system
-- 🎨 Modern radio-style UI
-- ⌨️ Keyboard shortcuts support

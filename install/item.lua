@@ -1,9 +1,9 @@
 core_gps_a = {
     name = 'core_gps_a',
-    label = 'GPS',
+    label = 'GPS Advanced',
     weight = 200,
     type = 'item',
-    image = 'core_gps.png',
+    image = 'core_gps_advanced.png',
     unique = true,
     useable = true,
     shouldClose = true,

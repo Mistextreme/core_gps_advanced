@@ -2,9 +2,20 @@ local QBCore = exports['qb-core']:GetCoreObject()
 
 local gpsMarkers = {}
 
-local CURRENT_VERSION = Config.Version
-local RESOURCE_NAME = Config.ResourceName
-local VERSION_CHECK_URL = 'https://raw.githubusercontent.com/' .. Config.GithubRepo .. '/main/version.json'
+local versionDataRaw = LoadResourceFile(GetCurrentResourceName(), 'version.json')
+local CURRENT_VERSION = 'unknown'
+local RESOURCE_NAME = 'unknown'
+local GITHUB_REPO = 'unknown'
+local VERSION_CHECK_URL = ''
+if versionDataRaw then
+    local success, versionData = pcall(function() return json.decode(versionDataRaw) end)
+    if success and versionData then
+        if versionData.version then CURRENT_VERSION = versionData.version end
+        if versionData.resource_name then RESOURCE_NAME = versionData.resource_name end
+        if versionData.github_repo then GITHUB_REPO = versionData.github_repo end
+        VERSION_CHECK_URL = 'https://raw.githubusercontent.com/' .. GITHUB_REPO .. '/main/version.json'
+    end
+end
 
 local function ParseVersion(version)
     local major, minor, patch = version:match('(%d+)%.(%d+)%.(%d+)')
@@ -13,7 +24,14 @@ local function ParseVersion(version)
         minor = tonumber(minor) or 0,
         patch = tonumber(patch) or 0
     }
-end
+        local versionDataRaw = LoadResourceFile(GetCurrentResourceName(), 'version.json')
+        local CURRENT_VERSION = 'unknown'
+        if versionDataRaw then
+            local success, versionData = pcall(function() return json.decode(versionDataRaw) end)
+            if success and versionData and versionData.version then
+                CURRENT_VERSION = versionData.version
+            end
+        end
 
 local function CompareVersions(current, latest)
     local currentVer = ParseVersion(current)
