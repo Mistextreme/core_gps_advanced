@@ -3,7 +3,7 @@ game 'gta5'
 
 description 'core_gps - Location Marker Management System'
 author 'ChrisNewmanDev'
-version '1.0.2'
+version '1.0.4'
 
 shared_scripts {
     'config.lua'
