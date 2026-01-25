@@ -9,4 +9,4 @@ core_gps_a = {
     shouldClose = true,
     combinable = nil,
     description = 'A GPS device for marking and managing locations'
-}
+},
